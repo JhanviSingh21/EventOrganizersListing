@@ -1,0 +1,27 @@
+.jumbotron-fluid {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.lead {
+    text-align: center;
+}
+
+.class {
+    color: #3D3D3D;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+.login_link {
+    margin-bottom: 20px;
+    color: #374957;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: normal;
+    text-align: center;
+}

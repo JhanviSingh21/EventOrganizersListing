@@ -1,0 +1,138 @@
+    .example {
+        margin-top: 1px;
+        margin-left: 140px;
+        font-weight: bold;
+        color: cornflowerblue;
+        background-color: rgb(33, 29, 94);
+    }
+    
+    .exam {
+        margin-top: 1px;
+        margin-left: 140px;
+        /* font-weight: bold; */
+        color: cornflowerblue;
+    }
+    
+    .article {
+        margin: 100px 0;
+        margin-top: 40px
+    }
+    
+    p {
+        line-height: 1.9em;
+    }
+    
+    .media {
+        text-align: center;
+    }
+    
+    span {
+        color: #AEAEAE;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    
+    .picture {
+        width: 50%;
+    }
+    
+    .title {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    .subtitle {
+        color: #AEAEAE
+    }
+    
+    .post-data {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #D9D9D9;
+        float: right;
+        padding: 50px;
+    }
+    
+    article {
+        margin: 100px 0;
+    }
+    
+    p {
+        line-height: 1.9em;
+    }
+    
+    .media {
+        text-align: center
+    }
+    
+    span {
+        color: #AEAEAE;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    .title {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    .subtitle {
+        color: #AEAEAE
+    }
+    
+    .post-data {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #D9D9D9;
+        float: right;
+        padding: 50px
+    }
+    
+    article {
+        margin: 100px 0;
+    }
+    
+    p {
+        line-height: 1.9em;
+    }
+    
+    .media {
+        text-align: center
+    }
+    
+    span {
+        color: #AEAEAE;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    .title {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    .subtitle {
+        color: #AEAEAE
+    }
+    
+    .post-data {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #D9D9D9;
+        float: right;
+        padding: 50px
+    }

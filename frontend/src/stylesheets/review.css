@@ -1,0 +1,142 @@
+.cont {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: #f3f5f5;
+    height: 90%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-flow: row;
+    -ms-flex-flow: row;
+    flex-flow: row;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: background .5s ease;
+    transition: background .5s ease;
+    margin: 40px;
+}
+
+#next {
+    right: -120px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#previous {
+    left: -120px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.arrow {
+    width: 60px;
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    font-size: 2rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.user-image {
+    /* background: url('https://dl.dropboxusercontent.com/s/qxmegzcf52nv2mt/person-woman-coffee-cup.jpg'); */
+    background-size: cover;
+    height: 70%;
+    background-position: right;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.username {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 27px;
+    font-size: 1.7rem;
+    font-weight: 200;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-right: 35px;
+    padding-left: 80px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.4);
+    height: 40px;
+    z-index: 1;
+}
+
+.banner {
+    transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
+    -webkit-transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
+}
+
+.banner {
+    -webkit-transform: none!important;
+    transform: none!important;
+}
+
+.ground {
+    background-color: rgb(219, 198, 159);
+    padding: 60px;
+    margin-top: -30px;
+}
+
+.searchEvent {
+    padding: 10px;
+    float: left;
+    width: 49.3%;
+    margin-left: 90px;
+}
+
+@media screen and (max-width: 992px) {
+    .searchEvent {
+        width: 100%;
+        margin-right: 0;
+        padding-bottom: 12px;
+    }
+}
+
+input.applyNowBtn {
+    width: 19.2%;
+    /* float: left; */
+    /* padding: 4px; */
+    margin-bottom: 1.6%;
+}
+
+
+/* .innerBanner img {
+width: 100%;
+} */
