@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Model = require('../models/userModel');
+const Model = require('../models/adminuserModel');
 
 router.get('/home', (req, res) => {
     console.log('request in user router');

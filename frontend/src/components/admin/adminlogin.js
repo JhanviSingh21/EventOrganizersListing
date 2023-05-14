@@ -14,8 +14,8 @@ const Login = () => {
     fetch(url + "adminuser/getbyemail/" + values.email)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data) {
-          console.log(data);
 
           if (data.password == values.password) {
             console.log("login success");
@@ -53,10 +53,8 @@ const Login = () => {
                   {({ values, handleChange, handleSubmit }) => (
                     <form onSubmit={handleSubmit} class="mb-3">
                       {/* <form action="login_script.php" method="POST"> */}
-                      <div class="form-group py-2">
-                        <div class="input-field">
-                          <span class="far fa-user p-2"></span>
-                          <input
+                      <div class=" py-2">
+                      <input
                             type="email"
                             class="form-control"
                             placeholder="example@gmail.com"
@@ -65,10 +63,9 @@ const Login = () => {
                             value={values.email}
                             required
                           />
-                        </div>
                       </div>
-                      <div class="form-group py-1 pb-2">
-                        <div class="input-field">
+                      <div class=" py-1 pb-2">
+                        <div class="">
                           <span class="fas fa-lock px-2"></span>
                           <input
                             type="password"

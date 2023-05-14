@@ -26,11 +26,11 @@
         text-align: center;
     }
     
-    span {
+    /* span {
         color: #AEAEAE;
         font-size: 13px;
         text-transform: uppercase;
-    }
+    } */
     
     .picture {
         width: 50%;
@@ -67,11 +67,11 @@
         text-align: center
     }
     
-    span {
+    /* span {
         color: #AEAEAE;
         font-size: 13px;
         text-transform: uppercase;
-    }
+    } */
     
     img {
         width: 100%;
@@ -108,11 +108,11 @@
         text-align: center
     }
     
-    span {
+    /* span {
         color: #AEAEAE;
         font-size: 13px;
         text-transform: uppercase;
-    }
+    } */
     
     img {
         width: 100%;
