@@ -29,10 +29,10 @@ a:hover {
     cursor: pointer;
 }
 
-.btn.btn-primary {
+/* .btn.btn-primary {
     margin-top: 20px;
     border-radius: 15px;
-}
+} */
 
 .panel {
     min-height: 380px;

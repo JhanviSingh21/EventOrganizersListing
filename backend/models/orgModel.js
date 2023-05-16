@@ -9,6 +9,7 @@ const schema = new Schema({
     registeredaddress: String,
     state: String,
     city: String,
+    images : {type: Array, default: []},
     postalcode: String,
     description: String,
     email: String,

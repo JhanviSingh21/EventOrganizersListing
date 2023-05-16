@@ -72,19 +72,19 @@ const Header = () => {
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="./browseorg">
+              <NavLink class="nav-link" to="/main/browseorg">
                 Browse Org
-              </a>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./login">
+              <NavLink class="nav-link" to="/main/login">
                 Login
-              </a>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./signup">
+              <NavLink class="nav-link" to="/main/signup">
                 Signup
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>

@@ -3,3 +3,9 @@
   height: 300px;
   background-position: center;
 }
+
+.header-image{
+  background-size: cover;
+  height: 500px;
+  background-position: center;
+}

@@ -51,7 +51,7 @@ const PPTViewer = () => {
   const showRating = () => {
     if (currentUser !== null) {
       return (
-        <div class="review">
+        <div class="card p-3 mt-3">
           <h4 className="text-muted">Review</h4>
           <hr />
           <Rating
@@ -71,10 +71,7 @@ const PPTViewer = () => {
             value={ratingText}
             onChange={(e) => setRatingText(e.target.value)}
           />
-          <button
-            className="btn btn-primary mt-1 float-end "
-            onClick={addReview}
-          >
+          <button className="btn btn-primary mt-4" onClick={addReview}>
             Submit Review
           </button>
         </div>
@@ -123,93 +120,54 @@ const PPTViewer = () => {
       ));
     }
   };
-  const disData = () => {
-    if (!loading) {
-      return reviewList.map(({ description, _id }) => (
-        <div key={_id} class="col-md-12 col-lg-4 mb-4 mb-lg-0 ">
-          <div class="container contd" id="container">
-            <div class="card-wrapper">
-              <div class="arrow" id="previous">
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
-              </div>
-              <div class="arrow" id="next">
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              </div>
-              <div class="main-window" id="main-window">
-                <p class="small">
-                  <a href="#!" class="text-muted">
-                    {description}
-                  </a>
-                </p>
-              </div>
-              <Button
-                onClick={(e) => navigate("/main/review/")}
-                variant="contained"
-              >
-                Click For Full Details
-              </Button>
-              return{" "}
-              <div style={{ background: "#eee" }}>
-                {/* <img class="banner" src="https://events.mygov.in/sites/all/themes/mygov/images/inner-banner.jpg"></img> */}
-                <div className="container">
-                  <div className="row disdata">{disData()}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        // </div>
-        // </div>
-        // </div>
-        // </div>
-      ));
-    }
-  };
 
-  const displayData = () => {
-    if (!loading) {
+  const displayDetails = () => {
+    if (!loading && orgData !== null)
       return (
-        <div class="w3-row w3-padding w3-border">
-          <div class="w3-col l8 s12">
-            <div class="w3-container w3-white w3-margin w3-padding-large">
-              <div class="w3-center">
-                <h2>{orgData.organisationname}</h2>
-                <p class="small">
-                  <h6 class="text-muted">{orgData.link}</h6>
-                </p>
-                <p>{orgData.registeredaddress}</p>
-              </div>
+        <div className="card" style={{ marginTop: "-300px" }}>
+          <div className="card-body">
+            <h2>{orgData.organisationname}</h2>
+            <p className="text-muted fw-bold">{orgData.registeredaddress}</p>
+            <img
+              src={url + orgData.heroimage}
+              alt=""
+              className="card-img-top"
+            />
 
-              {/* <div class="w3-justify">
-                <img src="https://germini.info/wp-content/uploads/2016/12/JavaScript-if-else.jpg" alt="Girl Hat" class="w3-padding-12"/> */}
-              <div className="w3-justify">
-                <img src={url + orgData.heroimage} class="w3" alt="Laptop" />
+            <p className="mt-4">{orgData.description}</p>
 
-                <p>{orgData.description}</p>
-                {/* <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> */}
-                <p class="small">
-                  <h6 class="text-muted">{orgData.email}</h6>
-                </p>
-                {/* <p class="w3-left"><button class="w3-btn w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p> */}
-                {/* <p class="w3-right"><button class="w3-btn" onclick={e=>navigate("/main/review/" )} id="myBtn"><b>All Review  </b> <span class="w3-tag w3-white"></span></button></p> */}
+            <h4 className="mt-4">Event Images</h4>
+            <hr className="mb-3" />
+            {orgData.images.length > 0 ? (
+              <div className="row">
+                {orgData.images.map((image, index) => (
+                  <div className="col-md-6 mb-4">
+                    <img src={url + image} alt="" />
+                  </div>
+                ))}
               </div>
-            </div>
-            {showRating()}
+            ) : (
+              <h1 className="text-muted text-center">No Images Found</h1>
+            )}
           </div>
-          {displayRatings()}
         </div>
       );
-    }
   };
 
   return (
-    <div style={{ background: "#eee" }}>
-      <img
-        class="banner"
-        src="https://events.mygov.in/sites/all/themes/mygov/images/inner-banner.jpg"
-      ></img>
+    <div style={{ background: "#eee", backgroundAttachment: "fixed" }}>
+      <div
+        className="header-image"
+        style={{
+          backgroundImage: `url("https://wallpapercave.com/wp/wp7488367.jpg")`,
+        }}
+      ></div>
       <div className="container">
-        <div className="row">{displayData()}</div>
+        <div className="row">{displayDetails()}</div>
+        {showRating()}
+        <hr className="my-2" />
+        <h3>User Reviews</h3>
+        {displayRatings()}
       </div>
     </div>
   );

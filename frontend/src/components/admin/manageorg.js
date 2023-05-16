@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import app_config from "../../config";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import EditIcon from "@mui/icons-material/Edit";
 //import "../../stylesheets/browseplatform.css";
 import Update from "./update";
 
@@ -13,10 +13,12 @@ const ManageOrg = () => {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({});
 
+  const [selOrg, setSelOrg] = useState(null);
+
   const fetchData = () => {
-    fetch(url + 'org/getall')
-      .then(res => res.json())
-      .then(data => {
+    fetch(url + "org/getall")
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         setOrgData(data);
         setLoading(false);
@@ -28,8 +30,7 @@ const ManageOrg = () => {
   }, []);
 
   const deleteData = (id) => {
-    fetch(url + "org/delete/" + id, { method: "DELETE" })
-    .then((res) => {
+    fetch(url + "org/delete/" + id, { method: "DELETE" }).then((res) => {
       console.log(res.status);
       fetchData();
     });
@@ -42,8 +43,7 @@ const ManageOrg = () => {
 
   const displayUpdateForm = () => {
     if (showForm) {
-      return 
-     <Update formdata={formData}></Update>;
+      return <Update formdata={formData} />;
     }
   };
 
@@ -52,20 +52,23 @@ const ManageOrg = () => {
       return orgData.map((org) => (
         <tr>
           <td>{org.organisationname}</td>
-          <td>{org.email}</td>
+          <td>{org.registeredaddress}</td>
           <td>
             <button
               onClick={(e) => deleteData(org._id)}
               className="btn btn-danger"
             >
-              {/* <i class="fa fa-trash" aria-hidden="true"></i> */}
-              < DeleteForeverIcon color="dark" />
+              <DeleteForeverIcon color="dark" />
             </button>
           </td>
           <td>
-            <button className="btn btn-primary" onClick={updateData}>
-              {/* <i class="fas fa-pen"></i> */}
-              < EditIcon color="dark" />
+            <button
+              className="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#edit-org"
+              onClick={(e) => setSelOrg(org)}
+            >
+              <EditIcon color="dark" />
             </button>
           </td>
         </tr>
@@ -74,51 +77,54 @@ const ManageOrg = () => {
   };
 
   return (
-     <div>
-      <h1 className="text-center">Manage Organisation</h1>
-      <hr />
-      <table class="table align-middle mb-0 bg-white">
-  <thead class="bg-light">
-    <tr>
-      <th>Orgamistion Name</th>
-      <th>Email</th>
-      {/* <th>Organisation Name</th> */}
-    </tr>
-  </thead>
-  <tbody>
-    {/* <tr>
-      <td>
-     
-          <div class="ms-3">
-            <p class="fw-bold mb-1">John Doe</p>
-
+    <div>
+      <div
+        class="modal  fade"
+        id="edit-org"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Edit Event Organizer Details
+              </h1>
+              <button
+                type="button"
+                class="btn-close btn btn-danger"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                x
+              </button>
+            </div>
+            <div class="modal-body">
+              {selOrg !== null && <Update formdata={selOrg} />}
+            </div>
+            
           </div>
-        
-      </td>
-      <td><p class="text-muted mb-0">john.doe@gmail.com</p></td>
-      <td>
+        </div>
+      </div>
 
-        <p class="text-muted mb-0">IT department</p>
-      </td>
-       */}
-      {/* <td>
-        <button type="button" class="btn btn-link btn-sm btn-rounded">
-          Delete
-        </button>
-      </td>
-      <td>
-        <button type="button" class="btn btn-link btn-sm btn-rounded">
-          Edit
-        </button>
-      </td> */}
-    {/* </tr> */}
-    
-       
-  </tbody>
-  <tbody>{displayOrg()}</tbody>
-</table>
-      <div className="mt-5">{displayUpdateForm()}</div>
-     </div>
+      <div className="col-md-10 mx-auto">
+        <h1 className="text-center">Manage Organisation</h1>
+        <hr />
+        <table class="table align-middle mb-0 bg-white">
+          <thead class="bg-light">
+            <tr>
+              <th>Organizer Name</th>
+              <th>Address</th>
+              <th colSpan={2}>Actions</th>
+              {/* <th>Organisation Name</th> */}
+            </tr>
+          </thead>
+          <tbody>{displayOrg()}</tbody>
+        </table>
+        <div className="mt-5">{displayUpdateForm()}</div>
+      </div>
+    </div>
   );
 };
 
