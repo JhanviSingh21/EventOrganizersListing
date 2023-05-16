@@ -40,11 +40,18 @@ const Login = () => {
   };
 
   return (
-    <div class="jumbotron jumbotron-fluid jumbo fluid">
+    <div class="jumbotron jumbotron-fluid jumbo fluid" style={{minHeight: '100vh'}}>
       <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-4 offset-sd-3 offset-lg-4">
-            <h1 class="mb-3 text-center">Please LogIn</h1>
+          <div className="col-md-4">
+          <img
+          src="https://manikarthik.com/wp-content/uploads/2020/11/MK_Blogging_Laptop.png"
+          class=""
+          alt=""
+        />
+          </div>
+          <div className="col-md-8">
+          <h1 class="mb-3 text-center">Login To Continue</h1>
             <Formik initialValues={loginform} onSubmit={formSubmit}>
               {({ values, handleChange, handleSubmit }) => (
                 <form onSubmit={handleSubmit} class="mb-3">
@@ -90,12 +97,10 @@ const Login = () => {
               </p>
             </div>
           </div>
+          
         </div>
 
-        <img
-          src="https://manikarthik.com/wp-content/uploads/2020/11/MK_Blogging_Laptop.png"
-          class="src"
-        ></img>
+        
       </div>
     </div>
   );

@@ -2,8 +2,11 @@ import"../../stylesheets/signup.css";
 import Swal from "sweetalert2";
 import { Formik } from "formik";
 import app_config from "../../config";
+import { useNavigate } from "react-router-dom";
 function Signup({ setOpenSignup}){
     const url = app_config.api_url;
+
+    const navigate = useNavigate();
 
   const signupform = {
     fullname: "",
@@ -28,12 +31,13 @@ function Signup({ setOpenSignup}){
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.message == "success") {
+        if (data.message === "success") {
           Swal.fire({
             icon: "success",
             title: "Registered!",
             text: "Now Login to Continue",
           });
+          navigate("/main/login");
         } else {
           Swal.fire({
             icon: "error",
